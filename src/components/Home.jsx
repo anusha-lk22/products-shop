@@ -15,7 +15,7 @@ const Home = () => {
     fetchData();
   }, []);
   const fetchData = async () => {
-    const response = await fetch("https://fakestoreapi.com/products?limit=10");
+    const response = await fetch("https://fakestoreapi.com/products");
 
     const jsonData = await response.json();
 
