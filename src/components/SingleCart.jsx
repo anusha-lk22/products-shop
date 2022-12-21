@@ -3,6 +3,7 @@ import DataContext from "./DataContext";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faShoppingBasket } from "@fortawesome/free-solid-svg-icons";
 
+
 const SingleCart = () => {
   const { DataSet, setDataSet } = useContext(DataContext);
   return (
@@ -15,7 +16,7 @@ const SingleCart = () => {
                 width="119"
                 height="30"
                 src="https://demo-51.woovinapro.com/wp-content/uploads/2020/10/logo.png"
-                alt="Demo 51 – WooVina Pro"
+                alt="Demo 51 - WooVina Pro"
               ></img>
             </div>
             <label>
@@ -66,6 +67,7 @@ const SingleCart = () => {
           <tbody>
             <tr>
               <td>
+
                 <div className="p-5">image</div>
               </td>
               <td>

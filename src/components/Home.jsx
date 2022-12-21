@@ -4,6 +4,8 @@ import { faShoppingBasket } from "@fortawesome/free-solid-svg-icons";
 import "bootstrap/dist/css/bootstrap.min.css";
 import DataContext from "./DataContext";
 import { Link } from "react-router-dom";
+import SingleCart from "./SingleCart";
+
 
 const Home = () => {
   const [fake, setFake] = useState([]);
@@ -94,9 +96,11 @@ const Home = () => {
                 className="group m-5 w-40 h-50 p-4 box-border border-1 shadow-lg text-center hover:bg-slate-100"
                 key={item.id}
               >
-                <img src={item.image} />
-
+                
+                  <img src={item.image} />
+           
                 <div className="mt-10 hover:text-red-400">{item.category}</div>
+
                 <div className="text-blue-500">{item.title}</div>
                 <div>rating: {item.rating.rate}</div>
                 <div>${item.price}</div>

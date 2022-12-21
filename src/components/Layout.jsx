@@ -4,7 +4,7 @@ const Layout = () => {
   return (
     <>
       <nav>
-        <ul>
+        <ul className="text-center mt-6">
           <li>
             <Link to="/home">Home</Link>
           </li>

@@ -35,7 +35,7 @@ const CartPage = () => {
   function handleCart(id) {
     let index = DataSet.map((el) => {
       if (el.id === id) {
-        el.price;
+        el.total = el.price * el.count;
         return el;
       }
     });
@@ -135,7 +135,7 @@ const CartPage = () => {
                             </button>
                           </td>
                           <td className="text-red-400">
-                            {card.price * card.count}
+                            {card.total || card.count * card.price}
                           </td>
                         </tr>
                         <tr>
