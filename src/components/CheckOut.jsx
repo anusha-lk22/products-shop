@@ -48,7 +48,7 @@ const CheckOut = () => {
           </div>
         </div>
       )}
-      <div className="group m-5 w-45 h-50 p-4 box-border border-1 shadow-lg hover:bg-slate-100">
+      <div className="m-5 w-45 h-50 p-4 box-border border-1 shadow-lg hover:bg-slate-100">
         <div className="p-3 text-center bg-orange-200">BILLING DETAILS:</div>
         <div className="m-2">
           First Name: <input type="text" className="border px-4"></input>
