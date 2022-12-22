@@ -6,7 +6,7 @@ import SingleCart from "./components/SingleCart"
 import Layout from "./components/Layout";
 
 import "./index.css";
-import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Link, useParams } from "react-router-dom";
 import { DataProvider } from "./components/DataContext";
 function App() {
   return (

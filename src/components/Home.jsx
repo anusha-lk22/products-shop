@@ -33,7 +33,7 @@ const Home = () => {
   };
   return (
     <div>
-<nav className="border-b fixed top-0 left-0 z-10 flex h-20 w-full items-center justify-center bg-white">
+      <nav className="border-b pb-10 fixed top-0 left-0 z-10 flex h-12 w-full items-center justify-center bg-white">
         <div className="mx-auto h-5/6 w-11/12 xl:w-5/6">
           <div className="navbar px-0">
             <div className="navbar-start">
@@ -45,49 +45,54 @@ const Home = () => {
        <svg width="1em" height="1em" viewBox="0 0 15 15"><path fill="none" stroke="currentColor" d="M11 3.5h1M4.5.5h6a4 4 0 0 1 4 4v6a4 4 0 0 1-4 4h-6a4 4 0 0 1-4-4v-6a4 4 0 0 1 4-4Zm3 10a3 3 0 1 1 0-6a3 3 0 0 1 0 6Z"></path></svg>
         </div>
                           </div>
-                          <div className="navbar-end">
-              <div className="flex flex-row flex-wrap gap-4">
-                <div class="dropdown dropdown-end group text-gray-500">Language
-                <ul className="group/edit hidden group-hover:inline">
-                <li className="border-t-2 py-1 px-2 border-red-400 shadow-md">
-English
-                  </li>
-                  <li className="border-t py-1 px-2 shadow-md">
-French
-                  </li>
+<div className="navbar-end hidden lg:flex">
+    <ul className="menu menu-horizontal px-1">
+ 
+      <li tabIndex={0}>
+        <a className="hover:bg-white hover:text-red-500">
+          Language
+          <svg className="fill-current" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z"/></svg>
+        </a>
+        <ul className="p-2 z-30 bg-white border-t-2 border-red-500">
+          <li><a>English</a></li>
+          <li><a>French</a></li>
+        </ul>
+      </li>
+      <li tabIndex={0}>
+      <a className="hover:bg-white hover:text-red-500">
+          Currency
+          <svg className="fill-current" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z"/></svg>
+        </a>
+        <ul className="p-2 z-30 bg-white border-t-2 border-red-500">
+          <li><a>USD</a></li>
+          <li><a>EUR</a></li>
                 </ul>
-                </div>
-
-
-                <div class="dropdown dropdown-end text-gray-500 group">Currency
-                <ul className="group/edit hidden group-hover:inline">
-                <li className="border-t-2  py-1 px-2 border-red-400 shadow-md">
-USD                  </li>
-                  <li className="border-t py-1 px-2 shadow-md">
-EUR
-                  </li>
-                </ul>
-                </div>
-                <div className="text-gray-500 hover:text-red-500">Login/Register</div>
-  
-</div></div>
+      </li>
+       </ul>
+  </div>
                          			
 </div> 
-        
-        </div>
+                </div>
       </nav>
-      <nav className="border-b left-0 fixed top-0 z-10 flex h-20 w-full mt-20 items-center justify-center bg-white">
+      
+      <nav className="border-b left-0 fixed top-0 flex h-20 w-full mt-12 items-center justify-center bg-white">
         <div className="mx-auto h-5/6 w-11/12 xl:w-5/6">
           <div className="navbar px-0">
-            <div className="navbar-start">
+            <div className="navbar-start w-auto">
+              <div className="flex flex-row flex-wrap">
+              
               <img
                 width="119"
                 height="30"
                 src="https://demo-51.woovinapro.com/wp-content/uploads/2020/10/logo.png"
                 alt="Demo 51 – WooVina Pro"
               ></img>
-            </div>
-            <label>
+
+              <svg className="text-4xl ml-7 p-1 border-2" width="1em" height="1em" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" strokeLinecap="round" strokeWidth="2" d="M5 6h14M5 12h14M5 18h14"></path></svg>
+               </div>
+          </div>
+          <div className="navbar-center">
+               <label className="ml-10">
               <span>
                 <input
                   type="text"
@@ -101,7 +106,7 @@ EUR
         rounded
         transition
         ease-in-out
-        m-0 w-60 ml-20"
+        m-0 w-72 ml-20"
                   placeholder="Search Products. . ."
                 />
               </span>
@@ -114,22 +119,23 @@ EUR
                 </button>
               </span>
             </label>
+            </div>
+            
 
-            <div className="navbar-end">
+            <div className="navbar-end w-auto">
             <div className="flex flex-row flex-wrap">
             <button className="ml-20 border-2 p-2 rounded-full border-gray-200">
                 <div className="flex flex-row flex-wrap">
                 <span className="border border-1 rounded-full bg-red-500 px-1 text-white">
                   0
-                </span> <svg className="text-2xl" width="1em" height="1em" viewBox="0 0 36 36"><path fill="currentColor" d="M32.84 15.72a1 1 0 1 0-2 .29a13.15 13.15 0 0 1 .16 1.93A13 13 0 0 1 8.7 27h5.36a1 1 0 0 0 0-2h-9v9a1 1 0 1 0 2 0v-5.8a15 15 0 0 0 25.78-12.48Z" class="clr-i-outline clr-i-outline-path-1"></path><path fill="currentColor" d="M30.06 1A1.05 1.05 0 0 0 29 2v5.83A14.94 14.94 0 0 0 3 17.94a15.16 15.16 0 0 0 .2 2.48a1 1 0 0 0 1 .84h.16a1 1 0 0 0 .82-1.15A13.23 13.23 0 0 1 5 17.94a13 13 0 0 1 13-13A12.87 12.87 0 0 1 27.44 9h-5.38a1 1 0 0 0 0 2H31V2a1 1 0 0 0-.94-1Z" class="clr-i-outline clr-i-outline-path-2"></path><path fill="none" d="M0 0h36v36H0z"></path></svg>
+                </span>{" "} <svg className="text-2xl" width="1em" height="1em" viewBox="0 0 36 36"><path fill="currentColor" d="M32.84 15.72a1 1 0 1 0-2 .29a13.15 13.15 0 0 1 .16 1.93A13 13 0 0 1 8.7 27h5.36a1 1 0 0 0 0-2h-9v9a1 1 0 1 0 2 0v-5.8a15 15 0 0 0 25.78-12.48Z" className="clr-i-outline clr-i-outline-path-1"></path><path fill="currentColor" d="M30.06 1A1.05 1.05 0 0 0 29 2v5.83A14.94 14.94 0 0 0 3 17.94a15.16 15.16 0 0 0 .2 2.48a1 1 0 0 0 1 .84h.16a1 1 0 0 0 .82-1.15A13.23 13.23 0 0 1 5 17.94a13 13 0 0 1 13-13A12.87 12.87 0 0 1 27.44 9h-5.38a1 1 0 0 0 0 2H31V2a1 1 0 0 0-.94-1Z" className="clr-i-outline clr-i-outline-path-2"></path><path fill="none" d="M0 0h36v36H0z"></path></svg>
                 </div>
               </button>
               <button className="ml-4 border-2 p-2 rounded-full border-gray-200">
                 <div className="flex flex-row flex-wrap">
                 <span className="border border-1 rounded-full bg-red-500 px-1 text-white">
                   0
-                </span>{" "}
-                <svg className="text-2xl" width="1em" height="1em" viewBox="0 0 16 16"><path fill="currentColor" d="m8 2.748l-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385c.92 1.815 2.834 3.989 6.286 6.357c3.452-2.368 5.365-4.542 6.286-6.357c.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01L8 2.748zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143c.06.055.119.112.176.171a3.12 3.12 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15z"></path></svg>
+                </span>{" "} <svg className="text-2xl" width="1em" height="1em" viewBox="0 0 16 16"><path fill="currentColor" d="m8 2.748l-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385c.92 1.815 2.834 3.989 6.286 6.357c3.452-2.368 5.365-4.542 6.286-6.357c.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01L8 2.748zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143c.06.055.119.112.176.171a3.12 3.12 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15z"></path></svg>
                  </div>
               </button>
               <Link to="/cart">
@@ -147,105 +153,99 @@ EUR
           </div>
         </div>
       </nav>
-      <nav className="border-b left-0 fixed top-0 z-10 flex h-20 w-full mt-40 items-center justify-center bg-white">
+      
+      <nav className="border-b border-t left-0 fixed top-1 z-10 flex h-20 w-full mt-28 items-center justify-center bg-white">
         <div className="mx-auto h-5/6 w-11/12 xl:w-5/6">
           <div className="navbar px-0">
-            <div className="navbar-start">
-            <div className="flex flex-row flex-wrap gap-4">
-<div className="text-gray-500 hover:text-red-500">Home</div>
-<div class="bg-white text-gray-500 dropdown dropdown-end group pb-2 px-2">
-    <span className="hover:text-red-500">Shop</span>
-    <div className="flex flex-row flex-wrap gap-10 hover:border-t-2 hover:border-red-500">
-                <ul className="mt-3 group hidden group-hover:inline">
-                <li className="py-1 px-2 font-bold hover:text-red-500">
-                SHOP LAYOUT
-                  </li>
-                  <li className="mt-2 hover:text-red-500">
-                  Shop Left Sidebar
-                  </li>
-                  <li className="mt-2 hover:text-red-500">
-                  Shop Right Sidebar
-                  </li>
-                  <li className="mt-2 text-red-500">
-                  <Link to="/home" className="hover:text-red-500">Shop Full Width</Link>
-                  </li>
-                  <li className="mt-2 hover:text-red-500">
-                  Shop Both Sidebars
-                  </li>
-                </ul>
-                <ul className="group mt-3 hidden group-hover:inline">
-                <li className="py-1 px-2 font-bold hover:text-red-500">
-                SHOP PAGES
-                  </li>
-                  <li className="mt-2 hover:text-red-500">
-                  My Account
-                  </li>
-                  <li className="mt-2 hover:text-red-500">
-                  My Wishlist
-                  </li>
-                  <li className="mt-2 hover:text-red-500">
-                  My Cart
-                  </li>
-                  <li className="mt-2 hover:text-red-500">
-                  <Link to="/checkout">My Checkout</Link>
-                  </li>
-                </ul>
-                <ul className="mt-3 group hidden group-hover:inline">
-                <li className="py-1 px-2 font-bold hover:text-red-500">
-                PRODUCT TYPES
-                  </li>
-                  <li className="mt-2 hover:text-red-500">
-                  Simple Product
-                  </li>
-                  <li className="mt-2 hover:text-red-500">
-                  Variable Product
-                  </li>
-                  <li className="mt-2 hover:text-red-500">
-                  Affiliate Product
-                  </li>
-                  <li className="mt-2 hover:text-red-500">
-                  Grouped Product
-                  </li>
-                </ul>
-                <ul className="mt-3 group hidden group-hover:inline">
-                  <li className="mt-3">
-                  <img className="w-56" src="https://demo-51.woovinapro.com/wp-content/uploads/2020/10/banner-04.jpg" />
-                  </li>
-                </ul>
-                </div>
-           </div>
-           <div className="text-gray-500 hover:text-red-500">Blog</div>
-           <div class="bg-white text-gray-500 dropdown dropdown-end group pb-2 px-2">
-    <span className="hover:text-red-500">Pages</span>
-    <ul className="mt-3 group hidden group-hover:inline  hover:border-t-2 hover:border-red-500">
-      <li>
-      Frequently Questions
+          <div className="navbar-start w-auto hidden lg:flex">
+    <ul className="menu menu-horizontal px-1">
+    <li>
+        <a className="hover:bg-white hover:text-red-500">
+          Home
+         </a>
+        </li>
+      <li tabIndex={0}>
+        <a className="hover:bg-white hover:text-red-500">
+          Shop
+          <svg className="fill-current" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z"/></svg>
+        </a>
+                 <ul className="p-2 z-30 bg-white border-t-2 border-red-500">
+          <li><a>
+            <ul>
+              <li><a className="font-bold hover:text-red-500">
+              SHOP LAYOUT</a>
+              </li>
+              <li><a className=" hover:bg-white hover:text-red-500">
+              Shop Left Sidebar</a>
+              </li>
+              <li><a className=" hover:bg-white hover:text-red-500">
+              Shop Right Sidebar</a>
+              </li>
+              <li><a className=" hover:bg-white hover:text-red-500">
+              Shop Full Width</a>
+              
+              </li>
+              <li><a className=" hover:bg-white hover:text-red-500">
+              Shop Both Sidebars</a>
+              </li>
+            </ul>
+            </a></li>
+               </ul>
+           
+          </li>
+          <li>
+        <a className="hover:bg-white hover:text-red-500">Blog</a></li>
+
+      <li tabIndex={0}>
+      <a className="hover:bg-white hover:text-red-500">
+          Pages
+          <svg className="fill-current" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z"/></svg>
+        </a>
+        <ul className="p-2 z-30 bg-white border-t-2 border-red-500">
+        <li><a className=" hover:bg-white hover:text-red-500">Frequently Questions</a></li>
+        <li><a className=" hover:bg-white hover:text-red-500">Privacy Policy</a></li>
+        <li><a className=" hover:bg-white hover:text-red-500">Error 404</a></li>
+        
+        </ul>
       </li>
       <li>
-      Privacy Policy
+      <a className="hover:bg-white hover:text-red-500">About Us</a></li>
+      <li>
+      <a className="hover:bg-white hover:text-red-500">Contact Us</a></li>
+      <li tabIndex={0}>
+      <a className="hover:bg-white hover:text-red-500">
+          Vendor Zone
+          <svg className="fill-current" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z"/></svg>
+        </a>
+        <ul className="p-2 z-30 bg-white border-t-2 border-red-500">
+        <li><a className=" hover:bg-white hover:text-red-500">Dashboard</a></li>
+        <li><a className=" hover:bg-white hover:text-red-500">Store List</a></li>
+        <li><a className=" hover:bg-white hover:text-red-500">My Orders</a></li>
+        
+        </ul>
       </li>
-      <li>Error</li>
-      </ul>
+       </ul>
+  </div>
 
-</div>
-
-
-
-
-<div className="text-gray-500 hover:text-red-500">About Us</div>
-<div className="text-gray-500 hover:text-red-500">Contact Us</div>
-<div className="text-gray-500 hover:text-red-500">Vendor Zone</div>
-              </div>
-
-            </div>
-     
+  <div className="navbar-end w-auto hidden lg:flex">
+    <ul className="menu menu-horizontal px-1">
+    <li>
+        <a className="hover:bg-white hover:text-red-500">
+        <svg className="text-red-500 font-bold text-2xl" width="1em" height="1em" viewBox="0 0 15 15"><path fill="none" stroke="currentColor" d="M12.5 12.5a2 2 0 0 0 2-2v-2a2 2 0 0 0-2-2a1 1 0 0 0-1 1v4a1 1 0 0 0 1 1Zm0 0a2 2 0 0 1-2 2H8m6.5-4.5V7.5a7 7 0 1 0-14 0V10m2 2.5a1 1 0 0 0 1-1v-4a1 1 0 0 0-1-1a2 2 0 0 0-2 2v2a2 2 0 0 0 2 2Z"></path></svg>
+     </a>
+        </li>
+        <li>
+        Hotline<br/>706-676-8237
+        </li>
+        </ul>
+        </div>
 
 </div></div>
 </nav>
 
        <main className="pt-[var(--header-height)]">
-       <div className="bg-[url('https://demo-51.woovinapro.com/wp-content/uploads/2020/11/bk-title-header.jpg')] h-44">
-        <div className="p-4 mt-60 text-white text-4xl font-bold text-center">
+       <div className="bg-[url('https://demo-51.woovinapro.com/wp-content/uploads/2020/11/bk-title-header.jpg')] h-72">
+        <div className="p-28 mt-48 text-white text-6xl text-center">
           
           Shop Full Width
         </div>
@@ -259,8 +259,7 @@ EUR
               >
               
                   <img className="w-44 h-48 mx-auto" src={item.image} />
-           
-                <div className="mt-16 hover:text-red-400 text-gray-500">{item.category}</div>
+                   <div className="mt-16 hover:text-red-400 text-gray-500">{item.category}</div>
 
                 <div className="text-blue-500 hover:text-red-400 mt-2">{item.title}</div>
                 <div className="text-5xl text-gray-400">&#8902;&#8902;&#8902;&#8902;&#8902;</div>
@@ -276,7 +275,92 @@ EUR
             );
           })}
         </div>
+<div className="bg-gray-600 p-4 mt-16 text-white">
+<div className="flex flex-row flex-wrap p-10 mt-10 text-white gap-36">
+  <div className="w-2/6">
+  <img
+                width="119"
+                height="30"
+                src="https://demo-51.woovinapro.com/wp-content/uploads/2019/10/logo_Aden_2.png"
+                alt="Demo 51 - WooVina Pro"
+              ></img>
+  <p className="mt-2">We are a team of designers and developers that create high quality WordPress, Magento, Prestashop, Opencart theme</p>
+  <p className="font-bold mt-4 mb-3 text-lg">Payment</p>
+  <img src="https://demo-51.woovinapro.com/wp-content/uploads/2019/10/payment-icon.png"></img>
+
+</div>
+<div><span className="font-bold text-xl">Useful Links</span>
+  <ul className="mt-3">
+    <li>
+      Men
+    </li>
+    <li>
+      Women
+    </li>
+    <li>
+      Kid
+    </li>
+    <li>
+      shoes
+    </li>
+    <li>
+      Tops
+    </li>
+  </ul>
+</div>
+<div><span className="font-bold">
+Information</span>
+<ul className="mt-3"> 
+    <li>
+      Men
+    </li>
+    <li>
+      Women
+    </li>
+    <li>
+      Kid
+    </li>
+    <li>
+      shoes
+    </li>
+    <li>
+      Tops
+    </li>
+  </ul>
+</div>
+<div><span className="font-bold">Customer Service</span>
+<ul className="mt-3"> 
+    <li>
+      Men
+    </li>
+    <li>
+      Women
+    </li>
+    <li>
+      Kid
+    </li>
+    <li>
+      shoes
+    </li>
+    <li>
+      Tops
+    </li>
+  </ul>
+</div>
+</div>  
+<div className="flex flex-row flex-wrap p-6 mt-10 text-white gap-36 border-t">
+ 
+<div className="w-2/3">© Copyright 2022 Aden - All Rights Reserved - Powered by <Link to="https://woovina.com" className="hover:text-white hover:underline">WooVina Theme</Link>.</div>
+<div>
+  Frequently Questions | Privacy Polacy
+</div>
+</div>
+
+</div>
       </main>
+<div className="pt-2 text-white fixed right-0 top-40 z-30 text-center w-16 h-16 bg-orange-400">
+MORE DEMOS
+  </div>
     </div>
   );
 };
