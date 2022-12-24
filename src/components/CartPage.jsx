@@ -32,13 +32,11 @@ const CartPage = () => {
     setDataSet(index);
   }
 
-  function handleCart(id) {
+  function handleCart() {
     let index = DataSet.map((el) => {
-      if (el.id === id) {
-        el.total = el.price * el.count;
+              el.total = el.price * el.count;
         return el;
-      }
-    });
+      });
     setDataSet(index);
   }
 
@@ -167,7 +165,7 @@ const CartPage = () => {
         </div>
       </nav>
       
-      <nav className="border-b border-t left-0 fixed top-1 z-10 flex h-20 w-full mt-28 items-center justify-center bg-white">
+      <nav className="border-b border-t left-0 fixed top-1 flex h-20 w-full mt-28 items-center justify-center bg-white">
         <div className="mx-auto h-5/6 w-11/12 xl:w-5/6">
           <div className="navbar px-0">
           <div className="navbar-start w-auto hidden lg:flex">
@@ -256,113 +254,196 @@ const CartPage = () => {
 </div></div>
 </nav>
 <main className="pt-[var(--header-height)]">
-        <div className="p-4 bg-gray-300 mt-28 text-white text-2xl font-bold text-center">
-          Shop Projects
+ <div className="bg-gray-100">
+<div className="bg-[url('https://demo-51.woovinapro.com/wp-content/uploads/2020/11/bk-title-header.jpg')] h-72">
+        <div className="p-28 mt-48 text-white text-6xl text-center">
+          
+          Cart
         </div>
+        </div>
+    {DataSet.length >0 ? (
+ <div className="grid grid-cols-3 m-5 gap-5">
 
-        <div>
-          <table className="w-100">
-            <tr>
-              {DataSet.length > 0 ? (
+        <div className="col-span-2 p-3 grid grid-cols-6 border items-center">
+                        <div></div>
+             <div></div>
+                <div className="font-bold border-b bg-gray-100 pb-3">PRODUCT</div>
+                <div className="font-bold border-b pb-3">PRICE</div>
+                <div className="font-bold border-b pb-3">QUANTITY</div>
+                <div className="font-bold border-b pb-3">SUBTOTAL</div>
+                
+                {DataSet.length > 0 ? (
                 DataSet.map((card) => {
                   return (
-                    <td>
-                      <table className="table border w-60">
-                        <tr className="bg-red-300">
-                          <th className="b-0 p-3">PRODUCT</th>
-                          <th className="b-0">PRICE</th>
-                          <th className="b-0">QUANTITY</th>
-                          <th className="b-0">SUBTOTAL</th>
-                        </tr>
-                        <tr>
-                          <td className="p-3">{card.title}</td>
-                          <td className="text-red-400">{card.price}</td>
-                          <td>
-                            <button
-                              className="border btn btn-sm"
-                              onClick={() => handleMinus(card.id)}
+                  <div className="border-b p-4 col-span-6">
+                    <div className="grid grid-cols-6 items-center">
+
+                             <div className="w-7 text-center border rounded-full">&#x2715;</div>
+ <img className="w-20 h-20" src={card.image}></img>
+                   <div className="">{card.title}<br/>Vendor:</div>
+     <div className="text-red-500 ">{card.price}</div>
+  
+     <div>
+     <button
+                              className="border btn btn-sm bg-white text-black"
+                              onClick={() => {handleMinus(card.id)}}
                             >
                               -
                             </button>
-                            <button className="border btn btn-sm text-black">
-                              {card.count}
+                            <button className="border btn btn-sm bg-white text-black">
+                            {card.count}
                             </button>
 
                             <button
-                              onClick={() => handlePlus(card.id)}
-                              className="border btn btn-sm text-black"
+                              onClick={() => {handlePlus(card.id)}}
+                              className="border btn btn-sm bg-white text-black"
                             >
                               +
                             </button>
-                          </td>
-                          <td className="text-red-400">
-                            {card.total || card.count * card.price}
-                          </td>
-                        </tr>
-                        <tr>
-                          <td></td>
-                          <td></td>
-                          <td></td>
-                          <td>
-                            <button
-                              className="border btn btn-sm"
-                              onClick={() => {
-                                handleCart(card.id);
-                              }}
+                           
+                            </div>
+                            <div className="text-red-500">
+                            {card.total}</div>
+                           </div>
+                           </div>
+                            );
+                          })
+                        ) : (
+                          ""
+                        )}
+                           <div className="col-span-3"> <input className="py-1 border px-8" type="text" placeholder="coupon code"></input><button
+                              className="ml-3 border p-1 bg-red-500 hover:bg-black text-white rounded-md"
+                              onClick={() => {}}
+                            >
+                             APPLY COUPON
+                            </button></div>
+                            <div></div>
+                            <div></div>
+                            
+<div><button
+                              className="border p-1 bg-red-500 hover:bg-black text-white rounded-md uppercase"
+                              onClick={() => {handleCart()}}
                             >
                               update cart
-                            </button>
-                          </td>
-                        </tr>
-                      </table>
-                    </td>
-                  );
-                })
-              ) : (
-                <div className="mt-6 font-bold">Your Card is Empty</div>
-              )}
+                            </button></div>
 
-              <td>
-                <table className="ml-3 border">
-                  <tr className="bg-red-300">
-                    <th className="p-4" colSpan="2">
-                      CART TOTALS
-                    </th>
-                  </tr>
-                  <tr>
-                    <td className="p-4">subtotal</td>
-                    <td>$50.00</td>
-                  </tr>
-                  <tr>
-                    <td className="p-4">shipping</td>
-                    <td>
-                      {" "}
-                      Enter Your Address To <br />
-                      View Shipping Options.
-                    </td>
-                  </tr>
-                  <tr>
-                    <td className="p-4">total</td>
-                    <td>$50.00</td>
-                  </tr>
-                  <tr>
-                    <td colSpan="2">
-                      <Link
-                        to="/checkout"
-                        type="button"
-                        className="p-3 bg-red-300"
-                      >
-                        PROCESS TO CHECKOUT
-                      </Link>
-                    </td>
-                  </tr>
-                </table>
-              </td>
-            </tr>
-          </table>
         </div>
-      </main>
+
+        <div className="border p-3 grid grid-cols-2 items-center">
+        
+        <div className="col-span-2 font-bold text-center border-b pb-3">Cart totals</div>
+    
+<div className="font-bold border-b p-3 border-r">Subtotal</div>
+<div className="font-bold text-red-400 border-b p-3">
+  {DataSet.reduce((total, cur) => {
+ return total + cur.total;
+      }, 0)}
+</div>
+<div className="font-bold border-b pb-5 border-r">Shipping</div>
+<div className="border-b pl-3">Enter Your Address To View Shipping Options.<br/><span className="underline">CALCULATE SHIPPING</span> </div>
+
+<div className="font-bold border-b p-3 border-r">Total</div>
+<div className="text-red-500 border-b p-3 font-bold">{DataSet.reduce((total, cur) => {
+ return total + cur.total;
+      }, 0)}</div>
+<div className="col-span-2 text-center m-3">
+<Link to="/checkout" className="border py-2 px-24 w-full bg-red-500 hover:bg-black text-white rounded-md">
+                              
+                              PROCEED TO CHECKOUT
+                              </Link>
+                            </div>
+</div>
+</div>
+    ) : (<div>Your Cart is empty</div>)}
+</div>
+<div className="bg-gray-600 p-4 mt-16 text-white">
+<div className="flex flex-row flex-wrap p-10 mt-10 text-white gap-36">
+  <div className="w-2/6">
+  <img
+                width="119"
+                height="30"
+                src="https://demo-51.woovinapro.com/wp-content/uploads/2019/10/logo_Aden_2.png"
+                alt="Demo 51 - WooVina Pro"
+              ></img>
+  <p className="mt-2">We are a team of designers and developers that create high quality WordPress, Magento, Prestashop, Opencart theme</p>
+  <p className="font-bold mt-4 mb-3 text-lg">Payment</p>
+  <img src="https://demo-51.woovinapro.com/wp-content/uploads/2019/10/payment-icon.png"></img>
+
+</div>
+<div><span className="font-bold text-xl">Useful Links</span>
+  <ul className="mt-3">
+    <li>
+      Men
+    </li>
+    <li>
+      Women
+    </li>
+    <li>
+      Kid
+    </li>
+    <li>
+      shoes
+    </li>
+    <li>
+      Tops
+    </li>
+  </ul>
+</div>
+<div><span className="font-bold">
+Information</span>
+<ul className="mt-3"> 
+    <li>
+      Men
+    </li>
+    <li>
+      Women
+    </li>
+    <li>
+      Kid
+    </li>
+    <li>
+      shoes
+    </li>
+    <li>
+      Tops
+    </li>
+  </ul>
+</div>
+<div><span className="font-bold">Customer Service</span>
+<ul className="mt-3"> 
+    <li>
+      Men
+    </li>
+    <li>
+      Women
+    </li>
+    <li>
+      Kid
+    </li>
+    <li>
+      shoes
+    </li>
+    <li>
+      Tops
+    </li>
+  </ul>
+</div>
+</div>  
+<div className="flex flex-row flex-wrap p-6 mt-10 text-white gap-36 border-t">
+ 
+<div className="w-2/3">© Copyright 2022 Aden - All Rights Reserved - Powered by <Link to="https://woovina.com" className="hover:text-white hover:underline">WooVina Theme</Link>.</div>
+<div>
+  Frequently Questions | Privacy Polacy
+</div>
+</div>
+
+</div>
+              </main>
+              <div className="pt-2 text-white fixed right-0 top-40 z-30 text-center w-16 h-16 bg-orange-400">
+MORE DEMOS
+  </div>
     </div>
   );
 };
 export default CartPage;
+

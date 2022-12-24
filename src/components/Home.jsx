@@ -28,6 +28,8 @@ const Home = () => {
     let index = DataSet.find((el) => el.id === id);
     if (ix && !index) {
       ix.count = 1;
+      ix.total = ix.price;
+    
       setDataSet([...DataSet, ix]);
     }
   };
@@ -154,7 +156,7 @@ const Home = () => {
         </div>
       </nav>
       
-      <nav className="border-b border-t left-0 fixed top-1 z-10 flex h-20 w-full mt-28 items-center justify-center bg-white">
+      <nav className="border-b border-t left-0 fixed top-1 flex h-20 w-full mt-28 items-center justify-center bg-white">
         <div className="mx-auto h-5/6 w-11/12 xl:w-5/6">
           <div className="navbar px-0">
           <div className="navbar-start w-auto hidden lg:flex">
@@ -250,7 +252,7 @@ const Home = () => {
           Shop Full Width
         </div>
         </div>
-        <div className="flex flex-row flex-wrap gap-1 items-center">
+                <div className="flex flex-row flex-wrap gap-1 justify-center items-center">
           {fake.map((item) => {
             return (
               <div
@@ -258,7 +260,7 @@ const Home = () => {
                 key={item.id}
               >
               
-                  <img className="w-44 h-48 mx-auto" src={item.image} />
+                  <img className="w-auto h-48 object-contain mx-auto" src={item.image} />
                    <div className="mt-16 hover:text-red-400 text-gray-500">{item.category}</div>
 
                 <div className="text-blue-500 hover:text-red-400 mt-2">{item.title}</div>
